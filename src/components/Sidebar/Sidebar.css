@@ -1,7 +1,8 @@
+
+
 .sidebar {
   width: 280px;
   height: 100vh;
-  background: linear-gradient(180deg, #76B1FF 0%, rgba(118, 177, 255, 0.15) 60%, rgba(248, 250, 252, 0.8) 90%, #F8FAFC 100%);
   display: flex;
   flex-direction: column;
   padding: 48px 32px;
@@ -87,5 +88,13 @@
 }
 
 .nav-item.active {
+  padding: 6px 12px;
+  border-radius: 8px;
+  color: var(--light-text-color);
+  background-color: #358CFF;
   font-weight: 700;
+
+  .nav-icon {
+    filter: invert(100%);
+  }
 }

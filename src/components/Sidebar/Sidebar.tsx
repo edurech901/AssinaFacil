@@ -22,7 +22,7 @@ export default function Sidebar() {
           end
           className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
         >
-          <img src={iconeDashboard} alt="Dashboard" className="nav-icon" />
+          <img src={iconeDashboard} alt="Dashboard" className='nav-icon' />
           <span>Dashboard</span>
         </NavLink>
 
@@ -31,7 +31,7 @@ export default function Sidebar() {
           end
           className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
         >
-          <img src={iconeAssinaturas} alt="Assinaturas" className="nav-icon" />
+          <img src={iconeAssinaturas} alt="Assinaturas" className='nav-icon'/>
           <span>Assinaturas</span>
         </NavLink>
 
@@ -39,7 +39,7 @@ export default function Sidebar() {
           to="/subscriptions/new"
           className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
         >
-          <img src={iconeNovaAssinatura} alt="Nova assinatura" className="nav-icon" />
+          <img src={iconeNovaAssinatura} alt="Nova assinatura" className='nav-icon' />
           <span>Nova assinatura</span>
         </NavLink>
       </nav>
