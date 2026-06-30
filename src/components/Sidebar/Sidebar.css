@@ -1,0 +1,100 @@
+
+
+.sidebar {
+  width: 280px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 48px 32px;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.sidebar-user {
+  margin-bottom: 48px;
+}
+
+.user-name {
+  font-size: 24px;
+  font-weight: 700;
+  color: #101827;
+  margin-bottom: 2px;
+  line-height: 1.2;
+}
+
+.user-role {
+  font-size: 16px;
+  font-weight: 400;
+  color: #374151;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  color: #101827;
+  font-size: 18px;
+  font-weight: 500;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.nav-item:hover {
+  opacity: 0.7;
+  text-decoration: none;
+  color: #101827;
+}
+
+.nav-icon {
+  width: 24px;
+  height: 24px;
+  color: #101827;
+  stroke-width: 2.2px;
+  flex-shrink: 0;
+}
+
+.btn-sair {
+  color: #FF3B30;
+  font-weight: 700;
+}
+
+.btn-sair:hover {
+  color: #FF3B30;
+  opacity: 0.8;
+}
+
+.btn-sair .logout-icon {
+  color: #FF3B30;
+}
+
+.nav-item.active {
+  padding: 6px 12px;
+  border-radius: 8px;
+  color: var(--light-text-color);
+  background-color: #358CFF;
+  font-weight: 700;
+
+  .nav-icon {
+    filter: invert(100%);
+  }
+}
