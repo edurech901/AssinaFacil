@@ -1,4 +1,3 @@
-import { initialSubscriptions } from "../data/initialSubscriptions";
 import type {
   Subscription,
   SubscriptionFormData,
@@ -6,46 +5,43 @@ import type {
 
 const STORAGE_KEY = "assina-facil:subscriptions";
 
-function saveSubscriptions(subscriptions: Subscription[]): void {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(subscriptions));
-}
-
-function createInitialData(): Subscription[] {
-  return initialSubscriptions.map((subscription) => ({
-    ...subscription,
-  }));
+function saveSubscriptions(
+  subscriptions: Subscription[],
+): void {
+  localStorage.setItem(
+    STORAGE_KEY,
+    JSON.stringify(subscriptions),
+  );
 }
 
 export function getSubscriptions(): Subscription[] {
   const storedData = localStorage.getItem(STORAGE_KEY);
 
   if (!storedData) {
-    const initialData = createInitialData();
-    saveSubscriptions(initialData);
-
-    return initialData;
+    return [];
   }
 
   try {
-    const subscriptions = JSON.parse(storedData);
+    const parsedData: unknown = JSON.parse(storedData);
 
-    if (!Array.isArray(subscriptions)) {
-      throw new Error("Dados de assinaturas inválidos.");
+    if (!Array.isArray(parsedData)) {
+      localStorage.removeItem(STORAGE_KEY);
+      return [];
     }
 
-    return subscriptions as Subscription[];
+    return parsedData as Subscription[];
   } catch {
-    const initialData = createInitialData();
-    saveSubscriptions(initialData);
-
-    return initialData;
+    localStorage.removeItem(STORAGE_KEY);
+    return [];
   }
 }
 
 export function getSubscriptionById(
   id: string,
 ): Subscription | undefined {
-  return getSubscriptions().find(
+  const subscriptions = getSubscriptions();
+
+  return subscriptions.find(
     (subscription) => subscription.id === id,
   );
 }
@@ -53,18 +49,20 @@ export function getSubscriptionById(
 export function createSubscription(
   data: SubscriptionFormData,
 ): Subscription {
-  const now = new Date().toISOString();
+  const subscriptions = getSubscriptions();
+  const currentDate = new Date().toISOString();
 
   const newSubscription: Subscription = {
     ...data,
     id: crypto.randomUUID(),
-    createdAt: now,
-    updatedAt: now,
+    createdAt: currentDate,
+    updatedAt: currentDate,
   };
 
-  const subscriptions = getSubscriptions();
-
-  saveSubscriptions([...subscriptions, newSubscription]);
+  saveSubscriptions([
+    ...subscriptions,
+    newSubscription,
+  ]);
 
   return newSubscription;
 }
@@ -74,35 +72,49 @@ export function updateSubscription(
   data: SubscriptionFormData,
 ): Subscription | null {
   const subscriptions = getSubscriptions();
-  const subscriptionIndex = subscriptions.findIndex(
-    (subscription) => subscription.id === id,
-  );
 
-  if (subscriptionIndex === -1) {
+  const existingSubscription =
+    subscriptions.find(
+      (subscription) => subscription.id === id,
+    );
+
+  if (!existingSubscription) {
     return null;
   }
 
   const updatedSubscription: Subscription = {
-    ...subscriptions[subscriptionIndex],
+    ...existingSubscription,
     ...data,
     id,
     updatedAt: new Date().toISOString(),
   };
 
-  subscriptions[subscriptionIndex] = updatedSubscription;
-  saveSubscriptions(subscriptions);
+  const updatedSubscriptions =
+    subscriptions.map((subscription) =>
+      subscription.id === id
+        ? updatedSubscription
+        : subscription,
+    );
+
+  saveSubscriptions(updatedSubscriptions);
 
   return updatedSubscription;
 }
 
-export function deleteSubscription(id: string): boolean {
+export function deleteSubscription(
+  id: string,
+): boolean {
   const subscriptions = getSubscriptions();
 
-  const updatedSubscriptions = subscriptions.filter(
-    (subscription) => subscription.id !== id,
-  );
+  const updatedSubscriptions =
+    subscriptions.filter(
+      (subscription) => subscription.id !== id,
+    );
 
-  if (updatedSubscriptions.length === subscriptions.length) {
+  if (
+    updatedSubscriptions.length ===
+    subscriptions.length
+  ) {
     return false;
   }
 

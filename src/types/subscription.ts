@@ -22,14 +22,19 @@ export const PAYMENT_METHODS = [
   "Outro",
 ] as const;
 
-export const SUBSCRIPTION_STATUS = ["Ativa", "Inativa"] as const;
+export const SUBSCRIPTION_STATUS = [
+  "Ativa",
+  "Inativa",
+] as const;
 
 export type SubscriptionCategory =
   (typeof SUBSCRIPTION_CATEGORIES)[number];
 
-export type RenewalType = (typeof RENEWAL_TYPES)[number];
+export type RenewalType =
+  (typeof RENEWAL_TYPES)[number];
 
-export type PaymentMethod = (typeof PAYMENT_METHODS)[number];
+export type PaymentMethod =
+  (typeof PAYMENT_METHODS)[number];
 
 export type SubscriptionStatus =
   (typeof SUBSCRIPTION_STATUS)[number];
