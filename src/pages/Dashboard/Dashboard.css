@@ -1,0 +1,258 @@
+.dashboard-page {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.dashboard-page__header {
+  margin-bottom: 26px;
+}
+
+.dashboard-page__header h1 {
+  margin: 0;
+  color: #111827;
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+.dashboard-page__header p {
+  margin: 4px 0 0;
+  color: #475569;
+  font-size: 15px;
+}
+
+.dashboard-content {
+  display: grid;
+  grid-template-columns: 310px minmax(0, 1fr);
+  gap: 24px;
+}
+
+.dashboard-content__left {
+  display: grid;
+  gap: 20px;
+}
+
+.dashboard-card {
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid #b8b8b8;
+  border-radius: 16px;
+}
+
+.dashboard-card--metric {
+  min-height: 190px;
+  padding: 26px;
+}
+
+.dashboard-card__label {
+  display: block;
+  margin-bottom: 20px;
+  color: #1e293b;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.dashboard-card__main-value {
+  display: block;
+  color: #111827;
+  font-size: 36px;
+  line-height: 1.1;
+}
+
+.dashboard-card__main-value--date {
+  font-size: 30px;
+  text-transform: capitalize;
+}
+
+.dashboard-card__empty-value {
+  display: block;
+  max-width: 190px;
+  color: #111827;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.dashboard-card__support-text {
+  display: block;
+  margin-top: 6px;
+  color: #475569;
+  font-size: 14px;
+}
+
+.dashboard-card__icon {
+  position: absolute;
+  right: 24px;
+  bottom: 18px;
+  color: #358cff;
+  font-size: 48px;
+  font-weight: 300;
+}
+
+.dashboard-card__svg-icon {
+  position: absolute;
+  right: 22px;
+  bottom: 20px;
+  width: 38px;
+  height: 38px;
+  color: #358cff;
+}
+
+.dashboard-card--chart {
+  min-height: 400px;
+  padding: 26px;
+}
+
+.dashboard-chart {
+  display: flex;
+  height: calc(100% - 36px);
+  align-items: center;
+  justify-content: space-around;
+  gap: 36px;
+}
+
+.dashboard-chart__donut {
+  display: grid;
+  width: 210px;
+  height: 210px;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.dashboard-chart__center {
+  display: flex;
+  width: 118px;
+  height: 118px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+.dashboard-chart__center span {
+  max-width: 90px;
+  overflow: hidden;
+  color: #475569;
+  font-size: 12px;
+  text-align: center;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.dashboard-chart__center strong {
+  margin-top: 4px;
+  color: #111827;
+  font-size: 23px;
+}
+
+.dashboard-chart__legend {
+  display: flex;
+  min-width: 180px;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.dashboard-chart__legend-item {
+  display: grid;
+  grid-template-columns: 12px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  color: #334155;
+  font-size: 14px;
+}
+
+.dashboard-chart__legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.dashboard-chart__legend-item strong {
+  color: #111827;
+}
+
+.dashboard-chart__legend p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.dashboard-card--subscriptions {
+  grid-column: 1 / -1;
+  padding: 26px;
+}
+
+.dashboard-active-subscriptions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.dashboard-active-subscriptions > strong {
+  color: #111827;
+  font-size: 32px;
+}
+
+.dashboard-active-subscriptions__icons {
+  display: flex;
+  align-items: center;
+}
+
+.dashboard-active-subscriptions__icons span {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  margin-left: -8px;
+  place-items: center;
+  color: #358cff;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: #dbeafe;
+  border: 3px solid #ffffff;
+  border-radius: 9px;
+}
+
+.dashboard-active-subscriptions__icons span:first-child {
+  margin-left: 0;
+}
+
+@media (max-width: 900px) {
+  .dashboard-content {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-content__left {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .dashboard-card--subscriptions {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 650px) {
+  .dashboard-content__left {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-chart {
+    flex-direction: column;
+  }
+
+  .dashboard-card--chart {
+    min-height: auto;
+  }
+
+  .dashboard-active-subscriptions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .dashboard-active-subscriptions > strong {
+    font-size: 26px;
+  }
+}

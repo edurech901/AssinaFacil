@@ -1,0 +1,28 @@
+.new-subscription-page {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.new-subscription-page__header {
+  margin-bottom: 24px;
+}
+
+.new-subscription-page__header h1 {
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.2;
+  color: #111827;
+}
+
+.new-subscription-page__header p {
+  margin: 4px 0 0;
+  font-size: 15px;
+  color: #475569;
+}
+
+@media (max-width: 768px) {
+  .new-subscription-page__header h1 {
+    font-size: 24px;
+  }
+}
