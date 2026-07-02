@@ -12,6 +12,11 @@
   font-size: 22px;
   font-weight: 700;
   color: var(--primary-color);
+
+  img {
+    width: 200px;
+    height: auto;
+  }
 }
 
 .header-actions {
@@ -53,3 +58,4 @@
   font-weight: 700;
   font-size: 16px;
 }
+

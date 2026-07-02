@@ -1,6 +1,11 @@
-import { FormEvent, useState } from "react";
+import { type FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Mail, Lock, Eye, EyeOff, ArrowRight } from "lucide-react";
+import {
+  iconeCadeado,
+  iconeEmail,
+  iconeOlho,
+  iconeOlhoRiscado
+} from '../../assets';
 import "./login.css";
 import Logo from "../../assets/logo.svg";
 
@@ -28,7 +33,7 @@ export default function Login() {
                 <div className="input-group">
                     <label htmlFor="email">E-mail</label>
                     <div className="input-wrapper">
-                        <Mail size={18} className="input-icon" />
+                        <img src={iconeEmail} alt="E-mail" className="input-icon" />
                         <input
                             type="email"
                             id="email"
@@ -50,7 +55,7 @@ export default function Login() {
                         </span>
                     </div>
                     <div className="input-wrapper">
-                        <Lock size={18} className="input-icon" />
+                        <img  src={iconeCadeado} alt="Senha" className="input-icon" />
                         <input
                             type={showPassword ? "text" : "password"}
                             id="password"
@@ -64,13 +69,13 @@ export default function Login() {
                             onClick={() => setShowPassword((prev) => !prev)}
                             tabIndex={-1}
                         >
-                            {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                            {showPassword ? <img src={iconeOlhoRiscado} alt="Ocultar senha" /> : <img src={iconeOlho} alt="Mostrar senha" />}
                         </button>
                     </div>
                 </div>
 
                 <button type="submit" className="submit-btn">
-                    Entrar <ArrowRight size={18} />
+                    Entrar
                 </button>
 
                 <p className="register-text">

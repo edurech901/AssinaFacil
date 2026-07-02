@@ -1,6 +1,7 @@
 import {
   iconeNotificacao,
   iconeAjuda,
+  logo,
 } from '../../assets';
 import './Header.css';
 
@@ -8,7 +9,7 @@ export default function Header() {
   return (
     <header className="app-header">
       <div className="header-brand">
-        <span>Assina Fácil</span>
+        <img src={logo} alt="Assina Fácil" />
       </div>
 
       <div className="header-actions">

@@ -187,10 +187,196 @@ function Dashboard() {
     : null;
 
   return (
-    <div className="container">
-      <h1>Dashboard</h1>
+    <section className="dashboard-page">
+      <header className="dashboard-page__header">
+        <h1>Dashboard</h1>
+        <p>Bem-vindo de volta, Administrador.</p>
+      </header>
 
-    </div>
+      <div className="dashboard-content">
+        <div className="dashboard-content__left">
+          <article className="dashboard-card dashboard-card--metric">
+            <span className="dashboard-card__label">
+              Gasto recorrente
+            </span>
+
+            <strong className="dashboard-card__main-value">
+              {formatCurrency(monthlyTotal)}
+            </strong>
+
+            <span className="dashboard-card__support-text">
+              /mês
+            </span>
+
+            <span className="dashboard-card__icon">
+              $
+            </span>
+          </article>
+
+          <article className="dashboard-card dashboard-card--metric">
+            <span className="dashboard-card__label">
+              Próxima fatura
+            </span>
+
+            {nextSubscription ? (
+              <>
+                <strong className="dashboard-card__main-value dashboard-card__main-value--date">
+                  {new Intl.DateTimeFormat("pt-BR", {
+                    day: "2-digit",
+                    month: "long",
+                  }).format(
+                    nextSubscription.billingDate,
+                  )}
+                </strong>
+
+                <span className="dashboard-card__support-text">
+                  {daysUntilBilling === 0
+                    ? "Cobrança hoje"
+                    : daysUntilBilling === 1
+                      ? "Falta 1 dia"
+                      : `Faltam ${daysUntilBilling} dias`}
+                </span>
+              </>
+            ) : (
+              <>
+                <strong className="dashboard-card__empty-value">
+                  Nenhuma cobrança
+                </strong>
+
+                <span className="dashboard-card__support-text">
+                  Cadastre uma assinatura ativa
+                </span>
+              </>
+            )}
+
+            <svg
+              className="dashboard-card__svg-icon"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <circle
+                cx="12"
+                cy="12"
+                r="9"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+              />
+
+              <path
+                d="M12 7v5l3 2"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </article>
+        </div>
+
+        <article className="dashboard-card dashboard-card--chart">
+          <span className="dashboard-card__label">
+            Distribuição por categoria
+          </span>
+
+          <div className="dashboard-chart">
+            <div
+              className="dashboard-chart__donut"
+              style={{
+                background: chartBackground,
+              }}
+              role="img"
+              aria-label="Distribuição das assinaturas por categoria"
+            >
+              <div className="dashboard-chart__center">
+                {mainCategory ? (
+                  <>
+                    <span>
+                      {mainCategory.category}
+                    </span>
+
+                    <strong>
+                      {mainCategory.percentage}%
+                    </strong>
+                  </>
+                ) : (
+                  <>
+                    <span>Sem dados</span>
+                    <strong>0%</strong>
+                  </>
+                )}
+              </div>
+            </div>
+
+            <div className="dashboard-chart__legend">
+              {categoryDistribution.length > 0 ? (
+                categoryDistribution.map(
+                  ({ category, quantity }) => (
+                    <div
+                      key={category}
+                      className="dashboard-chart__legend-item"
+                    >
+                      <span
+                        className="dashboard-chart__legend-color"
+                        style={{
+                          backgroundColor:
+                            CATEGORY_COLORS[category],
+                        }}
+                      />
+
+                      <span>{category}</span>
+                      <strong>{quantity}</strong>
+                    </div>
+                  ),
+                )
+              ) : (
+                <p>
+                  Nenhuma assinatura ativa cadastrada.
+                </p>
+              )}
+            </div>
+          </div>
+        </article>
+
+        <article className="dashboard-card dashboard-card--subscriptions">
+          <span className="dashboard-card__label">
+            Assinaturas ativas
+          </span>
+
+          <div className="dashboard-active-subscriptions">
+            <strong>
+              {activeSubscriptions.length}{" "}
+              {activeSubscriptions.length === 1
+                ? "Assinatura"
+                : "Assinaturas"}
+            </strong>
+
+            <div className="dashboard-active-subscriptions__icons">
+              {activeSubscriptions
+                .slice(0, 3)
+                .map((subscription) => (
+                  <span
+                    key={subscription.id}
+                    title={subscription.name}
+                  >
+                    {subscription.name
+                      .trim()
+                      .charAt(0)
+                      .toUpperCase()}
+                  </span>
+                ))}
+
+              {activeSubscriptions.length > 3 && (
+                <span>
+                  +{activeSubscriptions.length - 3}
+                </span>
+              )}
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
   );
 }
 

@@ -94,10 +94,17 @@
 }
 
 .input-icon {
+    width: 18px;
+    height: 18px;
     position: absolute;
     left: 12px;
     color: var(--second-text-color);
     pointer-events: none;
+}
+
+button img {
+    width: 18px;
+    height: 18px;
 }
 
 .toggle-password {
