@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Login from '../pages/Login/Login'
 import Layout from '../components/Layout/Layout';
 import Dashboard from '../pages/Dashboard/Dashboard';
@@ -10,17 +10,18 @@ import SubscriptionDetails from '../pages/SubscriptionDetails/SubscriptionDetail
 export default function AppRoutes() {
   return (
     <Routes>
-      {/* Rota pública - sem Layout (sem Header/Sidebar) */}
+      <Route path="/" element={<Login />} />
       <Route path="/login" element={<Login />} />
 
-      {/* Rotas internas - com Layout (Header/Sidebar) */}
       <Route element={<Layout />}>
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/subscriptions" element={<Subscriptions />} />
         <Route path="/subscriptions/new" element={<NewSubscription />} />
         <Route path="/subscriptions/:id" element={<SubscriptionDetails />} />
         <Route path="/subscriptions/:id/edit" element={<EditSubscription />} />
       </Route>
+
+      <Route path="*" element={<Navigate to="/login" replace />} />
     </Routes>
   );
 }

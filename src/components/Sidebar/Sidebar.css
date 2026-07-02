@@ -6,9 +6,10 @@
   display: flex;
   flex-direction: column;
   padding: 48px 32px;
-  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  border-right: 1px solid var(--border-color);
   box-sizing: border-box;
   flex-shrink: 0;
+  background-color: var(--surface-color);
 }
 
 .sidebar-user {
@@ -18,7 +19,7 @@
 .user-name {
   font-size: 24px;
   font-weight: 700;
-  color: #101827;
+  color: var(--text-color);
   margin-bottom: 2px;
   line-height: 1.2;
 }
@@ -26,7 +27,7 @@
 .user-role {
   font-size: 16px;
   font-weight: 400;
-  color: #374151;
+  color: var(--second-text-color);
 }
 
 .sidebar-nav {
@@ -47,7 +48,7 @@
   align-items: center;
   gap: 16px;
   text-decoration: none;
-  color: #101827;
+  color: var(--text-color);
   font-size: 18px;
   font-weight: 500;
   background: none;
@@ -62,39 +63,39 @@
 .nav-item:hover {
   opacity: 0.7;
   text-decoration: none;
-  color: #101827;
+  color: var(--text-color);
 }
 
 .nav-icon {
   width: 24px;
   height: 24px;
-  color: #101827;
+  color: var(--text-color);
   stroke-width: 2.2px;
   flex-shrink: 0;
 }
 
 .btn-sair {
-  color: #FF3B30;
+  color: var(--danger-color);
   font-weight: 700;
 }
 
 .btn-sair:hover {
-  color: #FF3B30;
+  color: var(--danger-color);
   opacity: 0.8;
 }
 
 .btn-sair .logout-icon {
-  color: #FF3B30;
+  color: var(--danger-color);
 }
 
 .nav-item.active {
-  padding: 6px 12px;
+  padding: 6px;
   border-radius: 8px;
   color: var(--light-text-color);
-  background-color: #358CFF;
+  background-color: var(--primary-color);
   font-weight: 700;
+}
 
-  .nav-icon {
-    filter: invert(100%);
-  }
+.nav-item.active .nav-icon {
+  filter: invert(100%);
 }

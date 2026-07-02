@@ -4,19 +4,16 @@
   justify-content: space-between;
   width: 100%;
   padding: 24px 32px;
-  border-bottom: 1px solid var(--border-color, #E5E7EB);
+  background-color: var(--surface-color);
+  border-bottom: 1px solid var(--border-color);
   box-sizing: border-box;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
 }
 
 .header-brand {
   font-size: 22px;
   font-weight: 700;
   color: var(--primary-color);
-
-  img {
-    width: 200px;
-    height: auto;
-  }
 }
 
 .header-actions {
@@ -33,7 +30,7 @@
   justify-content: center;
   border-radius: 14px;
   cursor: pointer;
-  transition: transform var(--transition), background-color var(--transition), opacity var(--transition);
+  transition: transform var(--transition), opacity var(--transition);
 }
 
 .icon-button:hover {
@@ -53,7 +50,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   color: var(--light-text-color);
   font-weight: 700;
   font-size: 16px;

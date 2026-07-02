@@ -14,14 +14,14 @@
 
 .subscription-details-page__header h1 {
   margin: 0;
-  color: #111827;
+  color: var(--text-color);
   font-size: 30px;
   line-height: 1.2;
 }
 
 .subscription-details-page__header p {
   margin: 4px 0 0;
-  color: #475569;
+  color: var(--second-text-color);
   font-size: 15px;
 }
 
@@ -48,30 +48,30 @@
 }
 
 .subscription-details-page__button--secondary {
-  color: #1e293b;
-  background-color: #ffffff;
-  border: 1px solid #aeb4bd;
+  color: var(--text-color);
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-muted-color);
 }
 
 .subscription-details-page__button--secondary:hover {
-  background-color: #f8fafc;
+  background-color: var(--surface-muted-color);
 }
 
 .subscription-details-page__button--primary {
-  color: #ffffff;
-  background-color: #358cff;
-  border: 1px solid #358cff;
+  color: var(--light-text-color);
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
 }
 
 .subscription-details-page__button--primary:hover {
-  background-color: #2479e6;
-  border-color: #2479e6;
+  background-color: var(--primary-hover-color);
+  border-color: var(--primary-hover-color);
 }
 
 .subscription-details-card {
   padding: 28px;
-  background-color: #ffffff;
-  border: 1px solid #b8b8b8;
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
   border-radius: 16px;
 }
 
@@ -88,15 +88,15 @@
   height: 76px;
   place-items: center;
   flex-shrink: 0;
-  color: #358cff;
+  color: var(--primary-color);
   font-size: 40px;
   font-weight: 700;
-  background-color: #dbeafe;
+  background-color: var(--primary-soft-color);
   border-radius: 12px;
 }
 
 .subscription-details-card__category {
-  color: #475569;
+  color: var(--second-text-color);
   font-size: 14px;
 }
 
@@ -108,13 +108,13 @@
 
 .subscription-details-card__name h2 {
   margin: 2px 0;
-  color: #111827;
+  color: var(--text-color);
   font-size: 34px;
 }
 
 .subscription-details-card__identity p {
   margin: 2px 0 0;
-  color: #64748b;
+  color: var(--text-muted-color);
 }
 
 .subscription-details-card__status {
@@ -134,21 +134,21 @@
 }
 
 .subscription-details-card__status--ativa {
-  color: #15803d;
-  background-color: #dcfce7;
+  color: var(--success-color);
+  background-color: var(--surface-muted-color);
 }
 
 .subscription-details-card__status--ativa::before {
-  background-color: #22c55e;
+  background-color: var(--success-color);
 }
 
 .subscription-details-card__status--inativa {
-  color: #64748b;
-  background-color: #e5e7eb;
+  color: var(--text-muted-color);
+  background-color: var(--surface-hover-color);
 }
 
 .subscription-details-card__status--inativa::before {
-  background-color: #6b7280;
+  background-color: var(--text-muted-color);
 }
 
 .subscription-details-card__grid {
@@ -165,20 +165,20 @@
 }
 
 .subscription-details-card__item span {
-  color: #475569;
+  color: var(--second-text-color);
   font-size: 14px;
 }
 
 .subscription-details-card__item strong {
   overflow-wrap: anywhere;
-  color: #111827;
+  color: var(--text-color);
   font-size: 20px;
   font-weight: 500;
 }
 
 .subscription-details-card__item
   .subscription-details-card__value {
-  color: #358cff;
+  color: var(--primary-color);
   font-size: 25px;
   font-weight: 700;
 }
@@ -194,14 +194,14 @@
   position: relative;
   min-height: 190px;
   padding: 26px;
-  background-color: #ffffff;
-  border: 1px solid #b8b8b8;
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
   border-radius: 16px;
 }
 
 .subscription-summary-card h2 {
   margin: 0 0 26px;
-  color: #111827;
+  color: var(--text-color);
   font-size: 22px;
 }
 
@@ -218,12 +218,12 @@
 }
 
 .subscription-summary-card__content strong {
-  color: #111827;
+  color: var(--text-color);
   font-size: 34px;
 }
 
 .subscription-summary-card__content span {
-  color: #475569;
+  color: var(--second-text-color);
   font-size: 14px;
 }
 
@@ -233,7 +233,7 @@
   bottom: 20px;
   width: 34px;
   height: 34px;
-  color: #358cff;
+  color: var(--primary-color);
 }
 
 .subscription-details-page--empty {
@@ -247,20 +247,20 @@
 
 .subscription-details-page--empty h1 {
   margin: 0;
-  color: #111827;
+  color: var(--text-color);
 }
 
 .subscription-details-page--empty p {
   margin: 8px 0 24px;
-  color: #64748b;
+  color: var(--text-muted-color);
 }
 
 .subscription-details-page--empty button {
   height: 44px;
   padding: 0 20px;
-  color: #ffffff;
+  color: var(--light-text-color);
   font-weight: 600;
-  background-color: #358cff;
+  background-color: var(--primary-color);
   border: 0;
   border-radius: 7px;
   cursor: pointer;

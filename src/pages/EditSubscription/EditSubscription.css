@@ -10,14 +10,14 @@
 
 .edit-subscription-page__header h1 {
   margin: 0;
-  color: #111827;
+  color: var(--text-color);
   font-size: 30px;
   line-height: 1.2;
 }
 
 .edit-subscription-page__header p {
   margin: 4px 0 0;
-  color: #475569;
+  color: var(--second-text-color);
   font-size: 15px;
 }
 
@@ -32,27 +32,27 @@
 
 .edit-subscription-page--empty h1 {
   margin: 0;
-  color: #111827;
+  color: var(--text-color);
 }
 
 .edit-subscription-page--empty p {
   margin: 8px 0 24px;
-  color: #64748b;
+  color: var(--text-muted-color);
 }
 
 .edit-subscription-page--empty button {
   height: 44px;
   padding: 0 20px;
-  color: #ffffff;
+  color: var(--light-text-color);
   font-weight: 600;
-  background-color: #358cff;
+  background-color: var(--primary-color);
   border: 0;
   border-radius: 7px;
   cursor: pointer;
 }
 
 .edit-subscription-page--empty button:hover {
-  background-color: #2479e6;
+  background-color: var(--primary-hover-color);
 }
 
 @media (max-width: 768px) {

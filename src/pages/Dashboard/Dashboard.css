@@ -10,14 +10,14 @@
 
 .dashboard-page__header h1 {
   margin: 0;
-  color: #111827;
+  color: var(--text-color);
   font-size: 30px;
   line-height: 1.2;
 }
 
 .dashboard-page__header p {
   margin: 4px 0 0;
-  color: #475569;
+  color: var(--second-text-color);
   font-size: 15px;
 }
 
@@ -34,8 +34,8 @@
 
 .dashboard-card {
   position: relative;
-  background-color: #ffffff;
-  border: 1px solid #b8b8b8;
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
   border-radius: 16px;
 }
 
@@ -47,7 +47,7 @@
 .dashboard-card__label {
   display: block;
   margin-bottom: 20px;
-  color: #1e293b;
+  color: var(--text-color);
   font-size: 14px;
   font-weight: 500;
   text-transform: uppercase;
@@ -55,7 +55,7 @@
 
 .dashboard-card__main-value {
   display: block;
-  color: #111827;
+  color: var(--text-color);
   font-size: 36px;
   line-height: 1.1;
 }
@@ -68,7 +68,7 @@
 .dashboard-card__empty-value {
   display: block;
   max-width: 190px;
-  color: #111827;
+  color: var(--text-color);
   font-size: 24px;
   line-height: 1.2;
 }
@@ -76,7 +76,7 @@
 .dashboard-card__support-text {
   display: block;
   margin-top: 6px;
-  color: #475569;
+  color: var(--second-text-color);
   font-size: 14px;
 }
 
@@ -84,7 +84,7 @@
   position: absolute;
   right: 24px;
   bottom: 18px;
-  color: #358cff;
+  color: var(--primary-color);
   font-size: 48px;
   font-weight: 300;
 }
@@ -95,7 +95,7 @@
   bottom: 20px;
   width: 38px;
   height: 38px;
-  color: #358cff;
+  color: var(--primary-color);
 }
 
 .dashboard-card--chart {
@@ -127,14 +127,14 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: #ffffff;
+  background-color: var(--surface-color);
   border-radius: 50%;
 }
 
 .dashboard-chart__center span {
   max-width: 90px;
   overflow: hidden;
-  color: #475569;
+  color: var(--second-text-color);
   font-size: 12px;
   text-align: center;
   text-overflow: ellipsis;
@@ -144,7 +144,7 @@
 
 .dashboard-chart__center strong {
   margin-top: 4px;
-  color: #111827;
+  color: var(--text-color);
   font-size: 23px;
 }
 
@@ -160,7 +160,7 @@
   grid-template-columns: 12px 1fr auto;
   align-items: center;
   gap: 10px;
-  color: #334155;
+  color: var(--second-text-color);
   font-size: 14px;
 }
 
@@ -171,12 +171,12 @@
 }
 
 .dashboard-chart__legend-item strong {
-  color: #111827;
+  color: var(--text-color);
 }
 
 .dashboard-chart__legend p {
   margin: 0;
-  color: #64748b;
+  color: var(--text-muted-color);
   line-height: 1.5;
 }
 
@@ -193,7 +193,7 @@
 }
 
 .dashboard-active-subscriptions > strong {
-  color: #111827;
+  color: var(--text-color);
   font-size: 32px;
 }
 
@@ -208,11 +208,11 @@
   height: 44px;
   margin-left: -8px;
   place-items: center;
-  color: #358cff;
+  color: var(--primary-color);
   font-size: 18px;
   font-weight: 700;
-  background-color: #dbeafe;
-  border: 3px solid #ffffff;
+  background-color: var(--primary-soft-color);
+  border: 3px solid var(--surface-color);
   border-radius: 9px;
 }
 

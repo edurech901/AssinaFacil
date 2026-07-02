@@ -15,7 +15,7 @@ export default function Login() {
 
     function handleSubmit(event: FormEvent<HTMLFormElement>): void {
         event.preventDefault();
-        navigate("/");
+        navigate("/dashboard");
     }
 
     return (

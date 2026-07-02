@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import './Sidebar.css';
 import {
   iconeDashboard,
@@ -8,6 +8,8 @@ import {
 } from '../../assets';
 
 export default function Sidebar() {
+  const navigate = useNavigate();
+
   return (
     <aside className="sidebar">
       <div className="sidebar-user">
@@ -17,7 +19,7 @@ export default function Sidebar() {
 
       <nav className="sidebar-nav">
         <NavLink
-          to="/"
+          to="/dashboard"
           end
           className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
         >
@@ -43,7 +45,7 @@ export default function Sidebar() {
           <span>Configurações</span>
         </button>
 
-        <button className="nav-item btn-sair">
+        <button className="nav-item btn-sair" onClick={() => navigate('/login')}>
           <img src={iconeSair} alt="Sair" className="nav-icon" />
           <span>Sair</span>
         </button>

@@ -12,13 +12,13 @@
   margin: 0;
   font-size: 30px;
   line-height: 1.2;
-  color: #111827;
+  color: var(--text-color);
 }
 
 .new-subscription-page__header p {
   margin: 4px 0 0;
   font-size: 15px;
-  color: #475569;
+  color: var(--second-text-color);
 }
 
 @media (max-width: 768px) {
